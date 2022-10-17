@@ -6,7 +6,7 @@ import React from 'react'
         width={24}
         height={24}
         style={{
-          fill: "#fff",
+          fill: "#00000",
         }}
         {...props}
       >

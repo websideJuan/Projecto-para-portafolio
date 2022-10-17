@@ -1,8 +1,12 @@
 import CartImg from '../CompoIcons/Cart'
 import LikeImg from '../CompoIcons/Like'
+import Section from '../CompoIcons/Section'
 import Menu from '../CompoIcons/Menu'
-import imgHero from '../img/logoSinBg.png'
+// import imgHero from '../img/logoSinBg.png'
 import { useState } from 'react'
+import FormAction from "../Form/Formulario"
+// import Home from '../CompoIcons/Home'
+
 
 const Nabvar = () => {
     const [classUse, setClassUse] = useState(false);
@@ -11,21 +15,30 @@ const Nabvar = () => {
     }
   return (
         <nav className='
-                flex
-                justify-between 
-                lg:justify-around 
-                px-5  
-                lg:py-0
-                lg:gap-28
-                items-center 
-                relative
-                h-[20]
-                '
-            >
+            grid
+            grid-cols-3
+            items-center
+            px-5  
+            relative
+            z-10
+            lg:py-0
+            h-24
+            lg:grid-cols-4
+            lg:container
+            lg:mx-auto
+            lg:h-16
+            '
+        >
+            {/* <img src={imgHero} alt="logoImgHero" className='w-16 h-20 object-cover' />
+             */}
+            <p className='font-bold text-lg'>Farm <span className='uppercase text-green-600'>shop</span></p>
+
             <button
                 className='
-                    h-full w-10 
-                    hover:bg-slate-400 
+                    mr-auto
+                    ml-2
+                    h-8
+                    border
                     lg:hidden'
                 onClick={showMenu}
             >
@@ -33,53 +46,51 @@ const Nabvar = () => {
             </button>
 
             <div className={`
-                    text-gray-600
+                    text-green-600
+                    font-bold
                     grid
                     grid-cols-1
-                    absolute
-                    left-0 right-0 top-full
-                    gap-4
-                    lg:bg-transparent 
+                    items-center
+                    font-sans
                     transition-all 
                     bg-gray-100 
-                    font-
-                    place-content-evenly
                     text-center
                     text-sm
+                    lg:gap-4
+                    lg:bg-transparent
                     lg:grid-cols-4 
-                    lg:relative 
-                    lg:visible 
-                    lg:h-auto  
+                    lg:visible
+                    lg:h-5
+                    lg:relative
+                    lg:top-0
+                    lg:bottom-0
                     z-10
                     ${classUse 
-                        ?'h-72 visible '
-                        :'h-0 invisible overflow-hidden'
+                        ?'absolute h-72 top-full left-0 right-0 visible'
+                        :'absolute h-0 invisible top-full left-0 right-0 overflow-hidden '
                     }`}
                 >
-                <a href="/">Home</a>
-                <a href="/">Product</a>
-                <a href="/">Contact</a>
-                <a href="/">about...</a>
+                    
+                <a href="/" className='hover:text-black transition-all hover:underline'> Home</a>
+                <a href="/" className='hover:text-black transition-all hover:underline'>Product</a>
+                <a href="/" className='hover:text-black transition-all hover:underline'>Contact</a>
+                <a href="/" className='hover:text-black transition-all hover:underline'>about...</a>
             </div>
 
-            <img src={imgHero} alt="logoImgHero" className='block w-28 object-cover drop-shadow-lg lg:mr-[15%]' />
-            {/* <div className='flex items-center'>
-            <p className='text-4xl font-bold font-sans'>Logo</p>
-            </div> */}
-            
-            <div className='grid grid-cols-2 items-center lg:gap-6'>
-                <button className='col-span-1 scale-150 relative'>
-                    <CartImg  />
-                    <div className='absolute top-0 left-3/4 w-4 h-4 text-white text-center leading-[.8] rounded-full bg-black'>
-                        <span className='font-normal text-xs'>0</span>
-                    </div>
+
+            <div className='flex justify-between items-center lg:justify-center lg:gap-6'>
+                <button className='hover:bg-slate-300 hover:h-0 hover:opacity-0 hover:transition-all h-full '>
+                    <CartImg />
                 </button>
-                <button >
+                <button className='hover:bg-slate-300 hover:h-0 hover:opacity-0 hover:transition-all h-full '>
                     <LikeImg/>
                 </button>
+                <button className='hover:bg-slate-300 hover:h-0 hover:opacity-0 hover:transition-all h-full '>
+                    <Section />
+                </button>
             </div>
+            <FormAction />
         </nav>
-    
   )
 }
 

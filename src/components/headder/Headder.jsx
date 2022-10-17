@@ -1,18 +1,55 @@
-import FormAction from "../Form/Formulario"
+import imgHero from '../img/cannabis-2152602_1280.jpg'
+import imgHeroTwo from '../img/weedHero.jpg'
+import imgHeroBanner from '../img/heroIMG.jpg'
+// import ArrowRight from '../CompoIcons/ArrowRight'
+// import ArrowLeft from '../CompoIcons/ArrowLeft'
+
 
 const Headder = () => {
-    
-
   return (
-    <div className="h-[85vh] bg-[url('./components/img/store-gc9a005ade_640.png')] bg-cover bg-center  flex items-center">
-        <div className="container mx-auto py-10 lg:py-20 bg-white w-3/4 rounded-lg">
-            <section className="max-w-2xl mx-auto text-center px-4 mb-5">
-                <h1 className="text-3xl font-extrabold mb-2 ">Lorem ipsum dolor sit.</h1>
-                <p className="font-light text-sm text-gray-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas animi quis suscipit voluptate?</p>
+    //banner 
+        <div className="grid grid-cols-4">
+            <section className='relative z-0 col-span-4 py-20 flex items-center lg:py-36 before:absolute before:inset-0 before:bg-[#0000007c] before:z-10'>
+                <img src={imgHeroBanner} alt="" className='absolute object-cover h-full w-full inset-0'/>
+                <div className="w-full lg:w-1/2 text-center relative text-gray-100 p-5 z-10 mx-auto">
+                    <h5 className='font-bold text-6xl'>Lorem, <strong className='text-green-600'>ipsum</strong> dolor.</h5>
+                    <p className='font-thin hidden lg:block '>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident soluta enim, nam iste similique nesciunt rem ab ad et tempore deleniti consequuntur distinctio eligendi quaerat asperiores ratione harum nemo doloribus!</p>
+                </div>
             </section>
-            <FormAction />
+            <section className="relative z-10 col-span-4 ">
+                <div className='flex flex-col items-center gap-6 py-5 lg:h-96 justify-evenly lg:flex-row'>
+                    
+                    
+                    <div className="h-auto lg:h-60 w-72 hover:shadow-lg lg:hover:h-80 hover:scale-110 transition-all rounded text-center lg:overflow-hidden">
+                        <img src={imgHeroTwo} alt="" className='w-full' />
+                        <div className=' p-2'>
+                            <h5 className="font-bold pt-3">Informacion</h5>
+                            <p className='text-center text-xs text-green-600'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="/" className='my-3'>Ir</a>
+                        </div>
+                    </div>
+
+                    <div className="h-auto lg:h-60 w-72 hover:shadow-lg lg:hover:h-80  hover:scale-110 transition-all rounded text-center lg:overflow-hidden">
+                        <img src={imgHero} alt="" className='w-full' />
+                        <div className='flex flex-col gap-2 p-2'>
+                            <h5 className="font-bold pt-3">Banco de semillas</h5>
+                            <p className='text-center text-xs text-green-600'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente, illo!</p>
+                            <a href="/" className='my-3'>Ir</a>
+                        </div>
+                    </div>
+
+                    <div className="h-auto lg:h-60 w-72 hover:shadow-lg lg:hover:h-80 hover:scale-110 transition-all rounded text-center lg:overflow-hidden">
+                        <img src={imgHeroTwo} alt="" className='w-full' />
+                        <div className=' p-2'>
+                            <h5 className="font-bold pt-3">kit's Parafernalia</h5>
+                            <p className='text-center text-xs text-green-600'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <a href="/" className='my-3'>Ir</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </div>
+   
   )
 }
 
